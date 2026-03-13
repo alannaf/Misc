@@ -1,0 +1,119 @@
+    1  cat "/home/hpzgxdemo/.ssh/id_ed25519.pub" | ssh hpzgxdemo@10.10.16.46 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys"
+    2  cat "/home/hpzgxdemo/.ssh/id_ed25519.pub" | ssh hpzgxdemo@10.10.16.46 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys"
+    3  python3 --version
+    4  pip3 --version
+    5  nvcc --version
+    6  nvidia-smi
+    7  pwd
+    8  ls
+    9  cd Desktop/
+   10  git clone https://github.com/comfyanonymous/ComfyUI.git
+   11  cd ComfyUI/
+   12  cd Desktop/
+   13  ls
+   14  cd ComfyUI/
+   15  ls
+   16  ifconfig
+   17  dir
+   18  cd Desktop/
+   19  ls
+   20  cd ComfyUI/
+   21  ls
+   22  python3 -m venv comfyui-env
+   23  source comfyui-env/bin/activate
+   24  [200~pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+   25  pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+   26  install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+   27  ls
+   28  clear
+   29  \ls
+   30  python3 --version
+   31  pip3 --version
+   32  nvcc --version
+   33  nvidia-smi
+   34  cd ls
+   35  ls
+   36  cd ..
+   37  ls
+   38  cd ComfyUI/
+   39  ls
+   40  pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+   41  [200~pip install -r requirements.txt
+   42  ~pip install -r requirements.txt
+   43  pip install -r requirements.txt
+   44  cd ..
+   45  ls
+   46  cd ComfyUI/
+   47  ls
+   48  cd models/checkpoints/
+   49  ls
+   50  pip install -r requirements.txt
+   51  cd ..
+   52  pip install -r requirements.txt
+   53  wget https://huggingface.co/Comfy-Org/stable-diffusion-v1-5-archive/resolve/main/v1-5-pruned-emaonly-fp16.safetensors
+   54  cd models/checkpoints/
+   55  wget https://huggingface.co/Comfy-Org/stable-diffusion-v1-5-archive/resolve/main/v1-5-pruned-emaonly-fp16.safetensors
+   56  cd ../../
+   57  python main.py --listen 0.0.0.0
+   58  ls
+   59  curl -I http://localhost:8188
+   60  dir
+   61  ls
+   62  cd ..
+   63  ls
+   64  cd Desktop//ComfyUI/
+   65  ls
+   66  pip install -r requirements.txt         # or `pip install .` if it’s a package
+   67  # …or explicitly:
+   68  pip install sqlalchemy
+   69  cd models/checkpoints/
+   70  ls
+   71  dir
+   72  cd -
+   73  dir
+   74  python main.py --listen 0.0.0.0
+   75  python3 main.py --listen 0.0.0.0
+   76  ls
+   77  [200~python main.py --listen 0.0.0.0~
+   78  python main.py --listen 0.0.0.0
+   79  apt install python-is-python3
+   80  yes
+   81  python3 main.py --listen 0.0.0.0
+   82  # or if the venv provided a `python` entry, make sure you’ve activated it correctly:
+   83  # source comfyui-env/bin/activate
+   84  pip install -r requirements.txt
+   85  # create a venv if you haven’t already
+   86  cd ~/Desktop/ComfyUI
+   87  python3 -m venv comfyui-env
+   88  # activate it
+   89  source comfyui-env/bin/activate
+   90  # now pip refers to the venv’s pip – install requirements
+   91  pip install -r requirements.txt    # sqlalchemy etc. will be pulled in
+   92  # finally run the server
+   93  python3 main.py --listen 0.0.0.0
+   94  cd ~/Desktop/ComfyUI
+   95  python3 -m venv comfyui-env        # creates the venv
+   96  source comfyui-env/bin/activate    # “comfyui-env)” should now appear in your prompt
+   97  pip install -r requirements.txt    # installs sqlalchemy, FastAPI, etc.
+   98  python3 main.py --listen 0.0.0.0   # start the app
+   99  ls
+  100  cat requirements.txt 
+  101  # install headers (Ubuntu/Debian)
+  102  sudo apt-get update
+  103  sudo apt-get install build-essential python3-dev
+  104  # then retry inside the project
+  105  cd ~/Desktop/ComfyUI
+  106  ./comfyui-env/bin/pip install -r requirements.txt
+  107  # if that succeeds, start the server
+  108  ./comfyui-env/bin/python3 main.py --listen 0.0.0.0
+  109  python main.py --listen 0.0.0.0
+  110  import pandas as pd
+  111  whoami
+  112  hostname
+  113  ipconfig
+  114  ifconfig
+  115  hostmane
+  116  hostname
+  117  history
+  118  history | 2026-03-13-ZGXHistory.txt
+  119  history > 2026-03-13-ZGXHistory.txt
