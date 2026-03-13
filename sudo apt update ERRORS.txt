@@ -1,0 +1,50 @@
+In Visual Studio (VS) and Visual Studio Code (VS Code) extension development, the use of Node.js and VSIX files serves two different, but critical, purposes:
+ 
+Node.js (JavaScript Runtime)
+
+    Execution Environment: VS Code itself is built using JavaScript/TypeScript and runs on the Node.js runtime. Therefore, most extensions also run within this same Node.js environment, allowing them to execute JavaScript code outside of a web browser and interact with the local file system, network, and other system resources.
+    Access to a Rich Ecosystem: Node.js provides access to the vast npm (Node Package Manager) ecosystem, the world's largest repository of open-source libraries and modules. This allows developers to easily integrate and reuse existing packages, speeding up development and providing extensive functionality without having to write everything from scratch.
+    Tooling and Scripting: Many of the tools used in the extension development process (such as the vsce CLI for packaging and publishing, testing frameworks, and bundlers like webpack) are Node.js command-line tools. 
+
+VSIX Files (Packaging and Distribution)
+
+    Packaging Mechanism: A .vsix file is an archive (essentially a ZIP file following the Open Packaging Conventions standard) that bundles all the components of an extension into a single, portable package. This includes the extension's code (often bundled into a single JavaScript file), assets, images, and a manifest file that describes the extension's details and capabilities.
+    Installation: The .vsix file is the standard format for installing extensions in both Visual Studio and VS Code. The IDE reads the metadata in the manifest to properly install the extension in the correct location, manage dependencies, and present it to the user.
+    Distribution: Creating a .vsix file allows developers to distribute their extensions manually (for offline installation or private sharing) or publish them to the official Visual Studio Marketplace or private registries. This simplifies the process for users, who can install the entire extension with a single action
+    
+VS Steps Completed: 
+Installed Node.js 20.20.0 via fnm
+Added engines field to package.json for VS Code compatibility
+Created .vscodeignore to exclude unnecessary files
+Ran npx @vscode/vsce package --allow-missing-repository
+✅ Extension packaged: hpzgxdemo-1.1.0.vsix
+
+pzgxdemo@alanna-zgx-nano-ai-station-demo:~$ sudo apt update
+[sudo] password for hpzgxdemo: 
+Hit:1 https://packages.microsoft.com/repos/code stable InRelease
+Get:2 https://workbench.download.nvidia.com/stable/linux/debian default InRelease [7,745 B]
+Hit:3 https://repo.download.nvidia.com/baseos/ubuntu/noble/arm64 noble InRelease
+Hit:4 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa  InRelease
+Err:2 https://workbench.download.nvidia.com/stable/linux/debian default InRelease
+  The following signatures were invalid: EXPKEYSIG CD63F8B21266DE3C svc-workbench <svc-workbench@nvidia.com>
+Hit:5 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Hit:6 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+Hit:7 https://esm.ubuntu.com/apps/ubuntu noble-apps-security InRelease
+Hit:8 https://ppa.launchpadcontent.net/canonical-nvidia/linux-firmware-mbssid-patches/ubuntu noble InRelease
+Hit:9 https://repo.download.nvidia.com/baseos/ubuntu/noble/arm64 noble-updates InRelease
+Hit:10 https://esm.ubuntu.com/apps/ubuntu noble-apps-updates InRelease
+Hit:11 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease
+Hit:12 https://ppa.launchpadcontent.net/canonical-nvidia/nvidia-desktop-edge/ubuntu noble InRelease
+Hit:13 https://developer.download.nvidia.com/hpc-sdk/ubuntu/arm64  InRelease
+Hit:14 https://esm.ubuntu.com/infra/ubuntu noble-infra-security InRelease
+Hit:15 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Hit:16 https://ppa.launchpadcontent.net/canonical-nvidia/vulkan-packages-nv-desktop/ubuntu noble InRelease
+Hit:17 https://esm.ubuntu.com/infra/ubuntu noble-infra-updates InRelease
+Fetched 7,745 B in 1s (5,734 B/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+462 packages can be upgraded. Run 'apt list --upgradable' to see them.
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://workbench.download.nvidia.com/stable/linux/debian default InRelease: The following signatures were invalid: EXPKEYSIG CD63F8B21266DE3C svc-workbench <svc-workbench@nvidia.com>
+W: Failed to fetch https://workbench.download.nvidia.com/stable/linux/debian/dists/default/InRelease  The following signatures were invalid: EXPKEYSIG CD63F8B21266DE3C svc-workbench <svc-workbench@nvidia.com>
+W: Some index files failed to download. They have been ignored, or old ones used instead.

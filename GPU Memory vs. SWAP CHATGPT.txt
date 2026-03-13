@@ -1,0 +1,78 @@
+sudo sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'
+sudo apt install build-essential
+sudo dpkg --configure -a
+
+C Code
+vi ./swap.c 
+gcc swap.c -o swap
+swap
+
+C++ Code
+vi cudaswap.cu
+nvcc cudaswap.cu -o cudaswap
+cudaswap
+
+
+https://chatgpt.com/s/t_699e3062a0808191b073a261d596b052
+what is swap memory telling? hpzgxdemo@alanna-zgx-nano-ai-station-demo:~$ ./cudaswap 
+Free memory: 115040 MB
+Total memory: 122508 MB
+hpzgxdemo@alanna-zgx-nano-ai-station-demo:~$ ./swap
+Available Memory: 118419012 KB(KiloBytes)
+Free Swap: 16777212 KB(KiloBytes)
+Available Memory: 115643.57 MB(MegaBytes)
+Free Swap: 16384.00 MB(MegaBytes)
+
+Let’s break down what your outputs are telling you about memory and swap. You ran two different programs: cudaswap (GPU memory) and swap (system memory).
+
+1️⃣ GPU Memory (cudaswap)
+Free memory: 115040 MB
+Total memory: 122508 MB
+
+Total memory: The total GPU memory installed on your DGX station (~122 GB).
+
+Free memory: The amount of memory currently not used by GPU workloads (~115 GB).
+
+So right now, your GPU is mostly free, with a small amount (~7 GB) used by the system or other processes.
+
+This is GPU memory, not system RAM or swap.
+
+2️⃣ System Memory (swap)
+
+Your swap program is reading /proc/meminfo and reporting:
+
+Available Memory: 118419012 KB
+Free Swap: 16777212 KB
+Available Memory: 115643.57 MB
+Free Swap: 16384.00 MB
+Breakdown:
+
+Available Memory (Available Memory: 118419012 KB ≈ 115643 MB)
+
+This is the amount of RAM that your system can allocate for new processes without swapping.
+
+Includes free RAM + cached memory that can be reclaimed.
+
+Free Swap (Free Swap: 16777212 KB ≈ 16 GB)
+
+Swap memory is disk space used as “overflow” when RAM is full.
+
+Your system has ~16 GB of swap currently free, meaning it’s not being used yet.
+
+If your RAM fills up, the kernel can move inactive pages from RAM to swap.
+
+✅ Key Points About Swap
+
+Swap is slower than RAM because it’s on disk or NVMe.
+
+You want to avoid heavy swap usage on high-performance systems like DGX because it slows down workloads.
+
+On your system:
+
+Most RAM is free (~115 GB available).
+
+Swap is mostly unused (~16 GB free).
+
+This indicates your system is not memory-bound right now.
+
+If you want, I can make a single C program that shows GPU memory, RAM, and swap all in MB/GB in one unified output — this is very useful on a DGX for monitoring memory.
